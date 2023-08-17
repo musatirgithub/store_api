@@ -2,7 +2,7 @@ const Product = require('../models/product');
 
 const getAllProductsStatic = async (req,res)=>{
     // throw new Error('testing async errors')
-    const products = Product.filter({name:'vase table'})
+    const products = await Product.find({name:'vase table'})
     res.status(200).json({products, nbHits:products.length})
 }
 
